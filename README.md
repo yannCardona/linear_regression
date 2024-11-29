@@ -42,3 +42,7 @@ Run the main.py script to train the model using your dataset.
 - data.csv: Path to your CSV file containing the data.
 - --learning_rate: (Optional) Learning rate for gradient descent. Default is 0.01.
 - --iterations: (Optional) Number of training iterations. Default is 1000.
+
+## Example Data Plot
+Here is the plot showing the training data and the fitted regression line:
+![Regression Plot](images/plot.png)
