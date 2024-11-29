@@ -1,4 +1,4 @@
-from linearmodel import LinearModel
+from linear_model import LinearModel
 from plot import plot_data, plot_mse
 import argparse
 
