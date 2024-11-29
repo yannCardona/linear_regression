@@ -19,10 +19,10 @@ def plot_data(model):
 	# Show plot
 	plt.show()
 
-def ssr(self, slope, intercept):
-	return np.sum((self.df['price'] - (intercept + slope * self.df['km'])) ** 2)
+def mse(model, slope, intercept):
+	return 1/len(model.df['price']) * np.sum((model.df['price'] - (intercept + slope * model.df['km'])) ** 2)
 	
-def plot_ssr(model):
+def plot_mse(model):
 
 	# Define ranges for slopes and intercepts
 	slopes = np.linspace(-2, 2, 100)
@@ -35,16 +35,16 @@ def plot_ssr(model):
 	Z = np.zeros_like(X)
 	for i in range(len(intercepts)):
 		for j in range(len(slopes)):
-			Z[j, i] = model.ssr(slopes[j], intercepts[i])
+			Z[j, i] = mse(model, slopes[j], intercepts[i])
 
 	# Create a 3D surface plot
 	fig = plt.figure()
 	ax = fig.add_subplot(111, projection='3d')
 	ax.plot_surface(X, Y, Z, cmap='viridis')
 
-	ax.set_title("Surface Plot of Sum of Squared Residuals")
+	ax.set_title("Surface Plot of Mean Squared Residuals")
 	ax.set_xlabel("Intercept")
 	ax.set_ylabel("Slope")
-	ax.set_zlabel("Sum of Squared Residuals")
+	ax.set_zlabel("Mean Squared Residuals")
 
 	plt.show()

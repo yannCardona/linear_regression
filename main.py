@@ -1,5 +1,5 @@
 from linearmodel import LinearModel
-from plot import plot_data
+from plot import plot_data, plot_mse
 import argparse
 
 def main():

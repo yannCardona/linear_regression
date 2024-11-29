@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-from plot import plot_data, plot_ssr
 
 class LinearModel:
 	def __init__(self, lr=0.01, training_iterations=1000, slope=0, intercept=0):
@@ -54,9 +53,11 @@ class LinearModel:
 		"""
 		residuals =  predicted_prices - self.df_normalized['price']
 		m = len(self.df_normalized['km'])
-		#more or less the derivative of ssr with respect to slope
+
+		#more or less the derivative of MSE with respect to slope
 		grad_intercept = 1 / m * residuals.sum()
-		#more or less the derivative of ssr with respect to slope
+
+		#more or less the derivative of MSE with respect to slope
 		grad_slope = 1 / m * (residuals * self.df_normalized['km']).sum()
 		return grad_intercept, grad_slope
 
