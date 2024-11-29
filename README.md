@@ -20,7 +20,7 @@ This project implements a simple **Linear Regression model** using Python. The m
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yannCardona/linear-regression.git
+   git clone https://github.com/yannCardona/linear_regression.git
    cd linear-regression
    ```
 2. Set Up a Virtual Environment (for Mac)
