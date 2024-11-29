@@ -78,7 +78,7 @@ class LinearModel:
 
 		return r2_score, mae
 	
-	def loadData(self, data):
+	def load_data(self, data):
 		"""
 		Load the data and normalize it.
 		"""
@@ -94,7 +94,7 @@ class LinearModel:
 		"""
 		Train the linear model using gradient descent.
 		"""
-		self.loadData(data)
+		self.load_data(data)
 
 		#start the training iterations
 		for i in range(self.training_iterations):
